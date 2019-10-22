@@ -1,0 +1,15 @@
+### Get main page
+GET http://localhost:5000/api/v1/bootcamps
+
+
+### Get single get request
+GET http://localhost:5000/api/v1/bootcamps/3
+
+### Post request
+POST http://localhost:5000/api/v1/bootcamps
+
+### Put Request
+PUT http://localhost:5000/api/v1/bootcamps/1
+
+### Delete Request
+DELETE http://localhost:5000/api/v1/bootcamps/2
