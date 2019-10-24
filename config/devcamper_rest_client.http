@@ -2,6 +2,9 @@
 GET http://localhost:5000/api/v1/bootcamps
 
 
+### Get bootcamps with radius
+GET http://localhost:5000/api/v1/bootcamps/radius/02118/200
+
 ### Get single get request
 GET http://localhost:5000/api/v1/bootcamps/5db00c5878861546a434b494
 
