@@ -1,5 +1,5 @@
 ### Get main page
-GET http://localhost:5000/api/v1/bootcamps
+GET http://localhost:5000/api/v1/bootcamps?page=2&limit=2
 
 
 ### Get bootcamps with radius
@@ -54,7 +54,7 @@ DELETE http://localhost:5000/api/v1/bootcamps/5d725a1b7b292f5f8ceff788
 
 
 ### Get Request courses
-GET http://localhost:5000/api/v1/courses
+GET http://localhost:5000/api/v1/courses?page=2&limit=2
 
 ### Get request to specific bootcamp courses
 GET http://localhost:5000/api/v1/bootcamps/5d713995b721c3bb38c1f5d0/courses
@@ -101,3 +101,24 @@ content-type: application/json
 
 ### Delete course
 DELETE  http://localhost:5000/api/v1/courses/5db6be56a2f1c535ac67ea3c
+
+
+### Post request for auth
+POST http://localhost:5000/api/v1/auth/register
+content-type: application/json
+
+{
+	"name": "John Doe",
+	"email": "john@gmail.com",
+	"password": "123456"
+}
+
+
+### Post request for auth(Login)
+POST http://localhost:5000/api/v1/auth/login
+content-type: application/json
+
+{
+	"email": "john@gmail.com",
+	"password": "123456"
+}
