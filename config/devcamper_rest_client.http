@@ -6,7 +6,7 @@ GET http://localhost:5000/api/v1/bootcamps
 GET http://localhost:5000/api/v1/bootcamps/radius/02118/200
 
 ### Get single get request
-GET http://localhost:5000/api/v1/bootcamps/5db00c5878861546a434b494
+GET http://localhost:5000/api/v1/bootcamps/5d713a66ec8f2b88b8f830b8
 
 ### Post request
 POST http://localhost:5000/api/v1/bootcamps
@@ -32,12 +32,21 @@ content-type: application/json
 }
 
 ### Put Request
-PUT http://localhost:5000/api/v1/bootcamps/5db00c5878861546a434b494
+PUT http://localhost:5000/api/v1/bootcamps/5d725a1b7b292f5f8ceff788
 content-type: application/json
 
 {
     "housing": false,
     "careers": ["Web Development", "UI/UX"]
+}
+
+
+### Put Request/Phote
+PUT http://localhost:5000/api/v1/bootcamps/5d725a1b7b292f5f8ceff788/photo
+content-type: image/jpg
+
+{
+	"file": "bootcamps.jpg"
 }
 
 ### Delete Request
@@ -60,10 +69,10 @@ POST http://localhost:5000/api/v1/bootcamps/5d713a66ec8f2b88b8f830b8/courses
 content-type: application/json
 
 {
-	"title": "Full Stack Web Development",
+	"title": "Full Stack Web Development 3",
 	"description": "In this course you will learn full stack web development, first learning all about the frontend with HTML/CSS/JS/Vue and then the backend with Node.js/Express/MongoDB",
 	"weeks": 12,
-	"tuition": 10000,
+	"tuition": 14000,
 	"minimumSkill": "intermediate"
 }
 
@@ -91,4 +100,4 @@ content-type: application/json
 }
 
 ### Delete course
-DELETE  http://localhost:5000/api/v1/courses/5d725cb9c4ded7bcb480eaa1
+DELETE  http://localhost:5000/api/v1/courses/5db6be56a2f1c535ac67ea3c
