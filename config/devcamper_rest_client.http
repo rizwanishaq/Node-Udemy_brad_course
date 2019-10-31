@@ -1,6 +1,5 @@
 ### Get main page
-GET http://localhost:5000/api/v1/bootcamps?page=2&limit=2
-
+GET http://localhost:5000/api/v1/bootcamps
 
 ### Get bootcamps with radius
 GET http://localhost:5000/api/v1/bootcamps/radius/02118/200
@@ -11,10 +10,10 @@ GET http://localhost:5000/api/v1/bootcamps/5d713a66ec8f2b88b8f830b8
 ### Post request
 POST http://localhost:5000/api/v1/bootcamps
 content-type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVkYjcxMjBiZTU5YzQxMDc2OGFlNjg5MiIsImlhdCI6MTU3MjMzOTIwMiwiZXhwIjoxNTc0OTMxMjAyfQ.ObotPQY3IUTuHZEnmJvPbAKsN01-CeZG_3DOf1Y5WMo
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVkYjk0OWM3ZDFmOTQ3NTcwM2E2M2M2MiIsImlhdCI6MTU3MjQyODUzOSwiZXhwIjoxNTc1MDIwNTM5fQ.xRAYYPAG1q-oWqspg-hlJpo95evws6hyv41plxdq880
 
 {
-    "name": "Tes3t Bootcamp",
+    "name": "ModernTech Bootcamp 2",
 		"description": "Is coding your passion? Codemasters will give you the skills and the tools to become the best developer possible. We specialize in front end and full stack web development",
 		"website": "https://devcentral.com",
 		"phone": "(444) 444-4444",
@@ -33,12 +32,12 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVkYjcxMjBiZ
 }
 
 ### Put Request
-PUT http://localhost:5000/api/v1/bootcamps/5d725a1b7b292f5f8ceff788
+PUT http://localhost:5000/api/v1/bootcamps/5db949ffd1f9475703a63c63
 content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVkYjcxMjBiZTU5YzQxMDc2OGFlNjg5MiIsImlhdCI6MTU3MjMzOTIwMiwiZXhwIjoxNTc0OTMxMjAyfQ.ObotPQY3IUTuHZEnmJvPbAKsN01-CeZG_3DOf1Y5WMo
 
 {
-    "housing": false,
-    "careers": ["Web Development", "UI/UX"]
+    "housing": false
 }
 
 
@@ -51,7 +50,8 @@ content-type: image/jpg
 }
 
 ### Delete Request
-DELETE http://localhost:5000/api/v1/bootcamps/5d725a1b7b292f5f8ceff788
+DELETE http://localhost:5000/api/v1/bootcamps/5db949ffd1f9475703a63c63
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVkYjcxMjBiZTU5YzQxMDc2OGFlNjg5MiIsImlhdCI6MTU3MjMzOTIwMiwiZXhwIjoxNTc0OTMxMjAyfQ.ObotPQY3IUTuHZEnmJvPbAKsN01-CeZG_3DOf1Y5WMo
 
 
 ### Get Request courses
@@ -66,8 +66,9 @@ GET http://localhost:5000/api/v1/courses/5d725a4a7b292f5f8ceff789
 
 
 ### Get main page
-POST http://localhost:5000/api/v1/bootcamps/5d713a66ec8f2b88b8f830b8/courses
+POST http://localhost:5000/api/v1/bootcamps/5db95b2bde2de9799df4f875/courses
 content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVkYjk0OWM3ZDFmOTQ3NTcwM2E2M2M2MiIsImlhdCI6MTU3MjQyODUzOSwiZXhwIjoxNTc1MDIwNTM5fQ.xRAYYPAG1q-oWqspg-hlJpo95evws6hyv41plxdq880
 
 {
 	"title": "Full Stack Web Development 3",
@@ -109,9 +110,10 @@ POST http://localhost:5000/api/v1/auth/register
 content-type: application/json
 
 {
-	"name": "John Doe",
-	"email": "john@gmail.com",
-	"password": "123456"
+	"name": "Test User",
+	"email": "test@gmail.com",
+	"password": "123456",
+	"role": "publisher"
 }
 
 
@@ -121,7 +123,7 @@ content-type: application/json
 
 
 {
-	"email": "john@gmail.com",
+	"email": "admin@gmail.com",
 	"password": "123456"
 }
 
@@ -129,4 +131,72 @@ content-type: application/json
 GET http://localhost:5000/api/v1/auth/me
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVkYjcxMjBiZTU5YzQxMDc2OGFlNjg5MiIsImlhdCI6MTU3MjMzOTIwMiwiZXhwIjoxNTc0OTMxMjAyfQ.ObotPQY3IUTuHZEnmJvPbAKsN01-CeZG_3DOf1Y5WMo
 
+### Post request for auth(Login)
+POST http://localhost:5000/api/v1/auth/forgotpassword
+content-type: application/json
 
+
+{
+	"email": "john@gmail.com"
+}
+
+### Put request of password reset
+PUT http://localhost:5000/api/v1/auth/resetpassword/651748ff97448fe41bacee8c3a5cdc75d2bfeaed
+content-type: application/json
+
+
+{
+	"password": "1234567"
+}
+
+
+### Put request of password reset
+PUT http://localhost:5000/api/v1/auth/updatedetails
+content-type: application/json
+Authorization: Bearer 
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVkN2E1MTRiNWQyYzEyYzc0NDliZTA0NSIsImlhdCI6MTU3MjUxMjkzNywiZXhwIjoxNTc1MTA0OTM3fQ.p-mrlptOk9XvtZOt3nfRQkQBBw0WVuZEduf2UwGHDM4
+
+
+{
+	"email": "john@gmail.com",
+	"name": "John Smith"
+}
+
+
+### Put request of password reset
+PUT http://localhost:5000/api/v1/auth/updatepassword
+content-type: application/json
+Authorization: Bearer 
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVkN2E1MTRiNWQyYzEyYzc0NDliZTA0NSIsImlhdCI6MTU3MjUxMjkzNywiZXhwIjoxNTc1MTA0OTM3fQ.p-mrlptOk9XvtZOt3nfRQkQBBw0WVuZEduf2UwGHDM4
+
+
+{
+	"currrentPassword": "123456",
+	"newPassword": "1234567"
+}
+
+### Get all the users
+GET  http://localhost:5000/api/v1/users
+Authorization: Bearer 
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVkN2E1MTRiNWQyYzEyYzc0NDliZTA0MiIsImlhdCI6MTU3MjUxNzA3MCwiZXhwIjoxNTc1MTA5MDcwfQ.Oqek7UYbCyUKrJJHa5k5kr5tZi80pQk7ykQCRMe-YYM
+
+
+
+### Get reviews
+GET http://localhost:5000/api/v1/reviews/5d7a514b5d2c12c7449be026
+
+### Get reviews for bootcamp
+GET http://localhost:5000/api/v1/bootcamps/5d725a1b7b292f5f8ceff788/reviews
+
+
+### POST request 
+POST http://localhost:5000/api/v1/bootcamps/5d725a1b7b292f5f8ceff788/reviews
+Authorization: Bearer
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVkYmIxNWQxZmNhMjI3MjExMzg2OGYxOSIsImlhdCI6MTU3MjU0MTkwNSwiZXhwIjoxNTc1MTMzOTA1fQ.3GhtiNpz7ffudt36OCnoHHfGtb_N9JVI4DNrkpqua-o
+content-type: application/json
+
+{
+	"title": "Nice bootcamp",
+	"text": "I learned a lot",
+	"rating": 8
+}

@@ -98,6 +98,11 @@ const BootcampSchema = new mongoose.Schema(
     createdAt: {
       type: Date,
       default: Date.now
+    },
+    user: {
+      type: mongoose.Schema.ObjectId,
+      ref: "User",
+      required: true
     }
   },
   {
@@ -112,7 +117,7 @@ BootcampSchema.pre("save", function(next) {
   next();
 });
 
-// Geocode & create location filed
+// Geocode & create location field
 BootcampSchema.pre("save", async function(next) {
   const loc = await geocoder.geocode(this.address);
   this.location = {
@@ -128,7 +133,6 @@ BootcampSchema.pre("save", async function(next) {
 
   // Do not save address in DB
   this.address = undefined;
-
   next();
 });
 
